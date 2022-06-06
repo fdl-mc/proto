@@ -1,0 +1,36 @@
+syntax = "proto3";
+package fdl.economy.v1;
+
+
+// Generic economy service.
+service Economy {
+    // Fetch economy state
+    rpc GetEconomyState(GetEconomyStateRequest) returns (GetEconomyStateResponse);
+    
+    // Perform money transaction
+    rpc Pay (PayRequest) returns (PayResponse);
+}
+
+// Economy state of the user
+message EconomyState {
+    int32 user_id = 0;
+    int32 balance = 1;
+}
+
+
+message GetEconomyStateRequest {
+    int32 user_id = 0;
+}
+
+message GetEconomyStateResponse {
+    EconomyState economy_state = 0;
+}
+
+
+message PayRequest {
+    int32 payee = 0;
+    int32 amount = 1;
+    string comment = 2;
+}
+
+message PayResponse {}
