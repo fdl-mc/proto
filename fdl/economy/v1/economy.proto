@@ -13,24 +13,24 @@ service Economy {
 
 // Economy state of the user
 message EconomyState {
-    int32 user_id = 0;
-    int32 balance = 1;
+    int32 user_id = 1;
+    int32 balance = 2;
 }
 
 
 message GetEconomyStateRequest {
-    int32 user_id = 0;
+    int32 user_id = 1;
 }
 
 message GetEconomyStateResponse {
-    EconomyState economy_state = 0;
+    EconomyState economy_state = 1;
 }
 
 
 message PayRequest {
-    int32 payee = 0;
-    int32 amount = 1;
-    string comment = 2;
+    int32 payee = 1;
+    int32 amount = 2;
+    string comment = 3;
 }
 
 message PayResponse {}
