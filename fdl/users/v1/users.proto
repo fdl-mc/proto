@@ -21,6 +21,9 @@ service Users {
     
     // Change user password
     rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordReply);
+    
+    // Create user
+    rpc CreateUser(CreateUserRequest) returns (CreateUserReply);
 }
 
 
@@ -80,3 +83,11 @@ message ChangePasswordRequest {
 }
 
 message ChangePasswordReply {}
+
+
+message CreateUserRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message CreateUserReply {}
