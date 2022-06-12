@@ -5,10 +5,10 @@ package fdl.economy.v1;
 // Generic economy service.
 service Economy {
     // Fetch economy state
-    rpc GetEconomyState(GetEconomyStateRequest) returns (GetEconomyStateResponse);
+    rpc GetEconomyState(GetEconomyStateRequest) returns (GetEconomyStateReply);
     
     // Perform money transaction
-    rpc Pay (PayRequest) returns (PayResponse);
+    rpc Pay (PayRequest) returns (PayReply);
 }
 
 // Economy state of the user
@@ -22,7 +22,7 @@ message GetEconomyStateRequest {
     int32 user_id = 1;
 }
 
-message GetEconomyStateResponse {
+message GetEconomyStateReply {
     EconomyState economy_state = 1;
 }
 
@@ -33,4 +33,4 @@ message PayRequest {
     string comment = 3;
 }
 
-message PayResponse {}
+message PayReply {}
