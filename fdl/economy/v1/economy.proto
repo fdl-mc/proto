@@ -7,6 +7,9 @@ service Economy {
     // Fetch economy state
     rpc GetEconomyState(GetEconomyStateRequest) returns (GetEconomyStateReply);
     
+    // Fetch economy state by token
+    rpc GetSelfEconomyState(GetSelfEconomyStateRequest) returns (GetSelfEconomyStateReply);
+    
     // Perform money transaction
     rpc Pay (PayRequest) returns (PayReply);
 }
@@ -23,6 +26,13 @@ message GetEconomyStateRequest {
 }
 
 message GetEconomyStateReply {
+    EconomyState economy_state = 1;
+}
+
+
+message GetSelfEconomyStateRequest {}
+
+message GetSelfEconomyStateReply {
     EconomyState economy_state = 1;
 }
 
