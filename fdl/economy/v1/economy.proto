@@ -12,6 +12,12 @@ service Economy {
     
     // Perform money transaction
     rpc Pay (PayRequest) returns (PayReply);
+    
+    // Add money to user
+    rpc Deposit (DepositRequest) returns (DepositReply);
+    
+    // Remove money from user
+    rpc Withdraw (WithdrawRequest) returns (WithdrawReply);
 }
 
 // Economy state of the user
@@ -44,3 +50,19 @@ message PayRequest {
 }
 
 message PayReply {}
+
+
+message DepositRequest {
+    int32 user_id = 1;
+    int32 amount = 2;
+}
+
+message DepositReply {}
+
+
+message WithdrawRequest {
+    int32 user_id = 1;
+    int32 amount = 2;
+}
+
+message WithdrawReply {}
