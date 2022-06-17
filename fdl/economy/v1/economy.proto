@@ -5,13 +5,13 @@ package fdl.economy.v1;
 // Generic economy service.
 service Economy {
     // Register in the service using identity service credentials
-    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Register (RegisterRequest) returns (RegisterReply);
     
     // Fetch economy state
-    rpc GetEconomyState(GetEconomyStateRequest) returns (GetEconomyStateReply);
+    rpc GetEconomyState (GetEconomyStateRequest) returns (GetEconomyStateReply);
     
     // Fetch economy state by token
-    rpc GetSelfEconomyState(GetSelfEconomyStateRequest) returns (GetSelfEconomyStateReply);
+    rpc GetSelfEconomyState (GetSelfEconomyStateRequest) returns (GetSelfEconomyStateReply);
     
     // Perform money transaction
     rpc Pay (PayRequest) returns (PayReply);
@@ -32,7 +32,7 @@ message EconomyState {
 
 message RegisterRequest {}
 
-message RegisterResponse {}
+message RegisterReply {}
 
 
 message GetEconomyStateRequest {
